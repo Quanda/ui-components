@@ -1,0 +1,56 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { boolean } from '@storybook/addon-knobs';
+import { Box } from '../../components';
+
+<Meta title='Components/Flexbox' component={Box} />
+
+# Flexbox <br/>
+## Easily create 2-dimensional layouts. <br/><br/>
+
+#### Rows
+<Preview>
+  <Story name='row' height="200px">
+    <Box flex col h="100%" jc="space-evenly" style={{ backgroundColor: '#f5f5f5' }}>
+      <Box flex row jc='space-between'>
+        <Box>Space</Box>
+        <Box>Between</Box>
+      </Box>
+      <Box flex row jc='space-around'>
+        <Box>Space</Box>
+        <Box>Around</Box>
+      </Box>
+      <Box flex row jc='space-evenly'>
+        <Box>Space</Box>
+        <Box>Evenly</Box>
+      </Box> 
+      <Box flex row jc='center'>
+        <Box>Centered</Box>
+        <Box>Centered</Box>
+      </Box>       
+    </Box>
+  </Story>
+</Preview>
+
+#### Columns with nested rows
+<Preview>
+  <Story name='column' height="200px">
+    <Box flex row jc="space-evenly" ai="center" h="100%" style={{ backgroundColor: '#f5f5f5' }}>
+      <Box flex col jc="space-between" h="100%">
+        <Box>Space</Box>
+        <Box>Between</Box>
+      </Box>
+      <Box flex col jc="space-around" h="100%">
+        <Box>Space</Box>
+        <Box>Around</Box>
+      </Box>
+      <Box flex col jc="space-evenly" h="100%">
+        <Box>Space</Box>
+        <Box>Evenly</Box>
+      </Box>   
+      <Box flex col jc="center" h="100%">
+        <Box>Centered</Box>
+        <Box>Centered</Box>
+      </Box>   
+    </Box>      
+  </Story>
+</Preview>

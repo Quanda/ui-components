@@ -1,0 +1,127 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { Button, Box } from '../../components';
+import { palette } from '../../../.storybook/theme.js';
+
+<Meta title='Components/Button' component={Button} />
+
+# Button <br/>
+## Handle user actions <br/><br/>
+
+### Examples
+<Preview>
+  <Story name='examples' height='200px'>
+    <Box flex col ai='space-evenly' jc='space-around' h='100%'>
+      <Box flex row jc='space-evenly'>
+        <Button brand='primary'>Primary</Button>
+        <Button brand='secondary'>Secondary</Button>
+        <Button brand='neutral'>Neutral</Button>
+        <Button brand='danger'>Danger</Button>
+      </Box>
+      <Box flex row jc='space-evenly'>
+        <Button brand='primary' variant='outlined'>Primary Outlined</Button>
+        <Button brand='secondary' variant='outlined'>Secondary Outlined</Button>
+        <Button brand='neutral'variant='outlined'>Neutral Outlined</Button>
+      </Box>      
+    </Box>
+  </Story>
+</Preview>
+
+## Props
+<Props of={Button} />
+
+## Usage <br/><br/>
+
+### Variants
+Using multiple button variants allows for distinction between actions of higher and lower prominence.<br/><br/>
+
+#### Contained
+For higher prominence
+```js
+variant = 'contained'
+```
+<Preview>
+  <Story name='contained'>
+    <Box flex row jc='space-evenly'>
+      <Button variant='contained'>Contained</Button>
+    </Box>
+  </Story>
+</Preview>
+
+#### Outlined
+For less prominence
+```js
+variant = 'outlined'
+```
+<Preview>
+  <Story name='outlined'>
+    <Box flex row jc='space-evenly'>
+      <Button variant='outlined'>Outlined</Button>
+    </Box>
+  </Story>
+</Preview>
+
+### Color
+Apply color dynamically through your own brand theme.
+
+Using the `brand` prop
+```js
+brand = 'primary' || 'secondary' || 'danger'
+```
+<Preview>
+  <Story name='color'>
+    <Box flex row jc='space-evenly'>
+      <Button brand='primary'>Primary</Button>
+      <Button brand='secondary'>Secondary</Button>
+      <Button brand='danger'>Danger</Button>
+    </Box>  
+  </Story>
+</Preview>
+
+Or with the natural `style` attribute
+```js
+style={{ color: 'white', backgroundColor: 'blue' }}
+```
+
+### Sizes
+Control the size of buttons
+```js
+size = 'sm' || 'md' || 'lg'
+```
+<Preview>
+  <Story name='size'>
+    <Box flex row jc='space-evenly'>
+      <Button size='sm'>Small</Button>
+      <Button>Default</Button>
+      <Button size='lg'>Large</Button>
+    </Box>
+  </Story>
+</Preview>
+
+### Rounded
+Apply round corners
+```js
+isRound = true
+```
+<Preview>
+  <Story name='round'>
+    <Box flex row jc='space-evenly'>  
+      <Button isRound variant='contained'>Contained</Button>
+      <Button isRound variant='outlined'>Outlined</Button>
+    </Box>
+  </Story>
+</Preview>
+
+### State
+Provide visual feedback as cues to the state of a button
+```js
+isLoading = true
+isDisabled = true
+```
+<Preview>
+  <Story name='state'>
+    <Box flex row jc='space-evenly'>
+      <Button isLoading>Loading</Button>
+      <Button isDisabled>Disabled</Button>
+    </Box>
+  </Story>
+</Preview>
